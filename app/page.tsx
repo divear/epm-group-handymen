@@ -1,5 +1,6 @@
 import { MdMail, MdPlace } from 'react-icons/md';         
 import { AiFillInstagram } from 'react-icons/ai';
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
           </div>
       </div>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+            <Image src="/epm-logo.webp" alt="EPM Handyman Services logo" width={180} height={180} className="mb-2" />
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">EPM Handyman Services</p>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Reliable repairs, renovations & maintenance</h1>
@@ -36,6 +38,7 @@ export default function Home() {
         </div>
       </header>
 
+      <Image src="/home-repair-hero.webp" alt="Home repair services" width={1200} height={600} className="w-full object-cover z-0 " />
       <main className="mx-auto max-w-7xl px-6 py-12">
         <section className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center bg-emerald-100 p-10 rounded-3xl">
           <div className="space-y-6 ">
