@@ -10,7 +10,7 @@ export default function Home() {
         <div className="px-10 py-2 bg-emerald-700 text-white flex items-center justify-between">
           <a
             href="mailto:contact@easypropertymaintenance.ie"
-            className="flex items-center gap-2 hover:text-emerald-200"
+            className="link-icon"
           >
             <MdMail size={18} />
             contact@easypropertymaintenance.ie
@@ -18,14 +18,14 @@ export default function Home() {
           <div className="flex items-center gap-6 ml-auto">
             <a
               href="https://www.google.com/maps/place/Bank+House+Business+Centre/@53.3336115,-6.2942839,17z/data=!3m1!4b1!4m6!3m5!1s0x48670c3fdcb36a15:0xa0b72d9969673e16!8m2!3d53.3336115!4d-6.2917036!16s%2Fg%2F11rkj2pddx?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
-              className="flex items-center gap-2 hover:text-emerald-200"
+              className="link-icon"
             >
               <MdPlace size={18} />
               Bank House, 331 S Circular Rd, Dublin 8
             </a>
             <a
               href="https://www.instagram.com/easypropertymaintenance/"
-              className="flex items-center gap-2 hover:text-emerald-200 ml-4"
+              className="link-icon ml-4"
             >
               <AiFillInstagram size={18} />
               Follow us on Instagram
@@ -78,16 +78,10 @@ export default function Home() {
               we help homeowners keep properties safe.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-8 py-3 text-base font-semibold text-white transition hover:bg-emerald-800"
-              >
+              <a href="#contact" className="btn-primary">
                 Book a service
               </a>
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-3 text-base font-semibold text-slate-900 transition hover:bg-slate-100"
-              >
+              <a href="#services" className="btn-secondary">
                 View services
               </a>
             </div>
@@ -106,21 +100,19 @@ export default function Home() {
 
         <section id="services">
           <div className="pt-20 mb-10 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-              Services we offer
-            </p>
+            <p className="section-label">Services we offer</p>
             <h3 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               Everything from small repairs to full renovations.
             </h3>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="card-service">
               <h4 className="mb-3 text-xl font-semibold">General Repairs</h4>
               <p className="text-slate-600">
                 Fix drywall, doors, windows, paintwork, cabinetry and more.
               </p>
             </article>
-            <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="card-service">
               <h4 className="mb-3 text-xl font-semibold">
                 Plumbing & Drainage
               </h4>
@@ -129,7 +121,7 @@ export default function Home() {
                 bathrooms.
               </p>
             </article>
-            <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="card-service">
               <h4 className="mb-3 text-xl font-semibold">
                 Electrical & Lighting
               </h4>
@@ -160,30 +152,46 @@ export default function Home() {
             </ul>
             <a
               href="mailto:contact@easypropertymaintenance.ie"
-              className="mt-8 inline-block bg-white text-emerald-800 px-8 py-3 rounded-full font-bold hover:bg-emerald-50"
+              className="mt-8 inline-block btn-white"
             >
               Request a Service Quote
             </a>
           </div>
         </section>
       </main>
+
       <section
-        id="contact"
-        className="rounded-xl bg-white p-10 shadow-sm border border-slate-200"
+        id="first-contact"
+        className="rounded-xl bg-emerald-200 p-10 shadow-sm border border-slate-200"
       >
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-700">
-              Get in touch
-            </p>
             <h3 className="mt-3 text-3xl font-bold tracking-tight">
+              Need to Schedule Your First Service?
+            </h3>
+            <p className="mt-4 text-slate-600">
+              Hassle-free property care with experts ready to assist you quickly
+              and professionally.
+            </p>
+            <button className="btn-green mt-6">Contact Us Now</button>
+          </div>
+        </div>
+      </section>
+      <section id="contact" className="card-section">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1fr_1fr]">
+          {/* Column 1: Get in Touch */}
+          <div>
+            <p className="section-label-emerald">Get in touch</p>
+            <h3 className="mt-3 text-2xl font-bold tracking-tight">
               Ready to schedule your repair or quote?
             </h3>
             <p className="mt-4 text-slate-600">
-              Call or email us for a fast response.
+              Call or email us for a fast, 24/7 response.
             </p>
           </div>
-          <div className="space-y-4 rounded-3xl bg-slate-50 p-6">
+
+          {/* Column 2: Contact Details */}
+          <div className="space-y-4">
             <div>
               <p className="text-sm text-slate-500">Phone</p>
               <a
@@ -194,12 +202,52 @@ export default function Home() {
               </a>
             </div>
             <div>
-              <p className="text-sm text-slate-500">Email</p>
+              <p className="text-sm text-slate-500">Support Email</p>
               <a
                 href="mailto:contact@easypropertymaintenance.ie"
-                className="text-lg font-semibold text-slate-900"
+                className="text-sm font-semibold text-slate-900 block"
               >
                 contact@easypropertymaintenance.ie
+              </a>
+              <a
+                href="mailto:operations@easypropertymaintenance.ie"
+                className="text-sm font-semibold text-slate-900 block"
+              >
+                operations@easypropertymaintenance.ie
+              </a>
+            </div>
+            <div>
+              <p className="text-sm text-slate-500">Address</p>
+              <p className="text-sm font-medium text-slate-900 leading-snug">
+                Bank House, 331 S Circular Rd,
+                <br />
+                Saint James, Dublin 8, D08 FH3E, Ireland
+              </p>
+            </div>
+          </div>
+
+          {/* Column 3: About & Boilerplate */}
+          <div className="text-sm text-slate-600 space-y-4">
+            <p>
+              We are proud to be part of the EPM Group, a network of businesses
+              committed to delivering exceptional customer service.
+            </p>
+            <p>
+              We provide a comprehensive property solution, offering both
+              reactive and planned maintenance to meet all your facility needs.
+            </p>
+            <div className="flex gap-4 mt-6 pt-6 border-t border-slate-100 text-xs text-slate-400">
+              <a href="#" className="hover:text-emerald-700">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-emerald-700">
+                Terms of use
+              </a>
+              <a href="#" className="hover:text-emerald-700">
+                Disclaimer
+              </a>
+              <a href="#" className="hover:text-emerald-700">
+                Refund Policy
               </a>
             </div>
           </div>
