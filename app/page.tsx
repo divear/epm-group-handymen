@@ -78,10 +78,10 @@ export default function Home() {
               we help homeowners keep properties safe.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <a href="#contact" className="btn-primary">
+              <a href="/contact" className="btn-primary">
                 Book a service
               </a>
-              <a href="#services" className="btn-secondary">
+              <a href="/services" className="btn-secondary">
                 View services
               </a>
             </div>
@@ -162,21 +162,31 @@ export default function Home() {
 
       <section
         id="first-contact"
-        className="rounded-xl bg-emerald-200 p-10 shadow-sm border border-slate-200"
+        className="rounded-t-xl bg-emerald-200 p-10 shadow-sm border border-slate-200"
       >
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <h3 className="mt-3 text-3xl font-bold tracking-tight">
+          {/* Left Column */}
+          <div className="flex flex-col">
+            <h3 className="text-3xl font-bold tracking-tight">
               Need to Schedule Your First Service?
             </h3>
             <p className="mt-4 text-slate-600">
               Hassle-free property care with experts ready to assist you quickly
               and professionally.
             </p>
-            <button className="btn-green mt-6">Contact Us Now</button>
+          </div>
+
+          <div className="flex justify-end lg:justify-end">
+            <a
+              href="/contact"
+              className=" inline-flex items-center justify-center rounded-full bg-emerald-700 px-8 py-3 text-base font-semibold text-white transition hover:bg-emerald-800"
+            >
+              Contact Us Now
+            </a>
           </div>
         </div>
       </section>
+
       <section id="contact" className="card-section">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr_1fr]">
           {/* Column 1: Get in Touch */}
@@ -237,16 +247,16 @@ export default function Home() {
               reactive and planned maintenance to meet all your facility needs.
             </p>
             <div className="flex gap-4 mt-6 pt-6 border-t border-slate-100 text-xs text-slate-400">
-              <a href="#" className="hover:text-emerald-700">
+              <a href="/privacy" className="hover:text-emerald-700">
                 Privacy
               </a>
-              <a href="#" className="hover:text-emerald-700">
+              <a href="/terms" className="hover:text-emerald-700">
                 Terms of use
               </a>
-              <a href="#" className="hover:text-emerald-700">
+              <a href="/disclaimer" className="hover:text-emerald-700">
                 Disclaimer
               </a>
-              <a href="#" className="hover:text-emerald-700">
+              <a href="/refund" className="hover:text-emerald-700">
                 Refund Policy
               </a>
             </div>
