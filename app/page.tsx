@@ -5,53 +5,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-emerald-300 to-slate-100 text-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-200 bg-red/95 backdrop-blur-xl">
-        <div className="px-10 py-2 bg-emerald-700 text-white flex items-center justify-between">
-          <a
-            href="mailto:contact@easypropertymaintenance.ie"
-            className="link-icon"
-          >
-            <MdMail size={18} />
-            contact@easypropertymaintenance.ie
-          </a>
-          <div className="flex items-center gap-6 ml-auto">
-            <a
-              href="https://www.google.com/maps/place/Bank+House+Business+Centre/@53.3336115,-6.2942839,17z/data=!3m1!4b1!4m6!3m5!1s0x48670c3fdcb36a15:0xa0b72d9969673e16!8m2!3d53.3336115!4d-6.2917036!16s%2Fg%2F11rkj2pddx?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
-              className="link-icon"
-            >
-              <MdPlace size={18} />
-              Bank House, 331 S Circular Rd, Dublin 8
-            </a>
-            <a
-              href="https://www.instagram.com/easypropertymaintenance/"
-              className="link-icon ml-4"
-            >
-              <AiFillInstagram size={18} />
-              Follow us on Instagram
-            </a>
-          </div>
-        </div>
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <Image
-            src="/handymen-light-logo.png"
-            alt="Handyman Services logo"
-            width={180}
-            height={180}
-            className="mb-2 "
-          />
-          <div className="text-right">
-            <p className="text-sm font-medium text-slate-600">Call us today</p>
-            <a
-              href="tel:+35312554422"
-              className="text-lg font-semibold text-emerald-700"
-            >
-              01 255 4422
-            </a>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Video Section */}
       <div className="-mt-1 relative h-[85vh] w-full overflow-hidden">
         <video

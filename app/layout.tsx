@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const geistSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-transparent`}
       >
+        <Header />
         {children}
       </body>
     </html>
