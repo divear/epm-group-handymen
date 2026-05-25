@@ -34,8 +34,8 @@ export default function Home() {
         </div>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <Image
-            src="/epm-logo.webp"
-            alt="EPM Handyman Services logo"
+            src="/handymen-light-logo.png"
+            alt="Handyman Services logo"
             width={180}
             height={180}
             className="mb-2 "
@@ -134,32 +134,102 @@ export default function Home() {
         </section>
 
         <section className="bg-emerald-800 text-white rounded-3xl p-12 shadow-2xl">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold mb-6">Why Partner With EPM?</h2>
-            <ul className="space-y-4 text-emerald-100 text-lg">
-              <li>
-                ✓ <strong>24/7/365 Availability:</strong> We reduce your site
-                downtime.
-              </li>
-              <li>
-                ✓ <strong>Fully Certified:</strong> Expert technicians for all
-                trade requirements.
-              </li>
-              <li>
-                ✓ <strong>Transparent Reporting:</strong> Detailed before/after
-                documentation for compliance.
-              </li>
-            </ul>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8">
+              We Provide Experienced & Quality Services
+            </h2>
+
+            <div className="grid gap-6 md:grid-cols-3 mb-10">
+              <div className="bg-emerald-900/50 p-6 rounded-2xl border border-emerald-700">
+                <h3 className="font-bold text-xl mb-2 text-white">
+                  Certified Technicians
+                </h3>
+                <p className="text-emerald-100 leading-relaxed">
+                  Experts trained and certified to handle any task
+                  professionally.
+                </p>
+              </div>
+
+              <div className="bg-emerald-900/50 p-6 rounded-2xl border border-emerald-700">
+                <h3 className="font-bold text-xl mb-2 text-white">
+                  24/7 Services
+                </h3>
+                <p className="text-emerald-100 leading-relaxed">
+                  Reliable maintenance, support anytime, day or night, every
+                  day.
+                </p>
+              </div>
+
+              <div className="bg-emerald-900/50 p-6 rounded-2xl border border-emerald-700">
+                <h3 className="font-bold text-xl mb-2 text-white">
+                  Dependable Warranty
+                </h3>
+                <p className="text-emerald-100 leading-relaxed">
+                  Long-lasting coverage ensuring confidence in every service.
+                </p>
+              </div>
+            </div>
+
             <a
               href="mailto:contact@easypropertymaintenance.ie"
-              className="mt-8 inline-block btn-white"
+              className="inline-block btn-white"
             >
               Request a Service Quote
             </a>
           </div>
         </section>
-      </main>
 
+        <section id="how-it-works" className="py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="text-center mb-16">
+              <p className="section-label text-emerald-700 font-semibold uppercase tracking-widest text-sm">
+                Our Process
+              </p>
+              <h3 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                Simple, stress-free property care.
+              </h3>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3 relative">
+              {/* Step 1 */}
+              <div className="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm text-center z-10">
+                <div className="w-12 h-12 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center text-xl font-bold mb-6">
+                  1
+                </div>
+                <h4 className="text-xl font-bold mb-3">Request a Quote</h4>
+                <p className="text-slate-600">
+                  Send us a message or call with your repair details. We provide
+                  transparent, upfront pricing with no hidden fees.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm text-center z-10">
+                <div className="w-12 h-12 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center text-xl font-bold mb-6">
+                  2
+                </div>
+                <h4 className="text-xl font-bold mb-3">Expert Repair</h4>
+                <p className="text-slate-600">
+                  Our fully insured, multi-trade professionals arrive on time
+                  and complete the work safely and efficiently.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm text-center z-10">
+                <div className="w-12 h-12 mx-auto bg-emerald-700 text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">
+                  3
+                </div>
+                <h4 className="text-xl font-bold mb-3">Peace of Mind</h4>
+                <p className="text-slate-600">
+                  We clean up our workspace and guarantee our repairs, leaving
+                  your property in perfect condition.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
       <section
         id="first-contact"
         className="rounded-t-xl bg-emerald-200 p-10 shadow-sm border border-slate-200"
