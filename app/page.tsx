@@ -143,40 +143,63 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3 relative">
-              {/* Step 1 */}
-              <div className="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm text-center z-10">
-                <div className="w-12 h-12 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center text-xl font-bold mb-6">
+            <div className="grid gap-6 md:grid-cols-5 relative">
+              <div className="text-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="w-10 h-10 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold mb-4">
                   1
                 </div>
-                <h4 className="text-xl font-bold mb-3">Request a Quote</h4>
-                <p className="text-slate-600">
-                  Send us a message or call with your repair details. We provide
-                  transparent, upfront pricing with no hidden fees.
+                <h4 className="font-bold text-slate-900 mb-2">
+                  Triage & Confirmation
+                </h4>
+                <p className="text-sm text-slate-600">
+                  Immediate prioritisation and email confirmation.
                 </p>
               </div>
 
-              {/* Step 2 */}
-              <div className="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm text-center z-10">
-                <div className="w-12 h-12 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center text-xl font-bold mb-6">
+              <div className="text-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="w-10 h-10 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold mb-4">
                   2
                 </div>
-                <h4 className="text-xl font-bold mb-3">Expert Repair</h4>
-                <p className="text-slate-600">
-                  Our fully insured, multi-trade professionals arrive on time
-                  and complete the work safely and efficiently.
+                <h4 className="font-bold text-slate-900 mb-2">
+                  Allocation & ETA
+                </h4>
+                <p className="text-sm text-slate-600">
+                  Right trade/team assigned; precise ETA provided.
                 </p>
               </div>
 
-              {/* Step 3 */}
-              <div className="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-sm text-center z-10">
-                <div className="w-12 h-12 mx-auto bg-emerald-700 text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">
+              <div className="text-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="w-10 h-10 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold mb-4">
                   3
                 </div>
-                <h4 className="text-xl font-bold mb-3">Peace of Mind</h4>
-                <p className="text-slate-600">
-                  We clean up our workspace and guarantee our repairs, leaving
-                  your property in perfect condition.
+                <h4 className="font-bold text-slate-900 mb-2">
+                  On‑Site Stabilisation​
+                </h4>
+                <p className="text-sm text-slate-600">
+                  Hazards isolated; function restored or made safe.
+                </p>
+              </div>
+              <div className="text-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="w-10 h-10 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold mb-4">
+                  4
+                </div>
+                <h4 className="font-bold text-slate-900 mb-2">
+                  Remedial Options
+                </h4>
+                <p className="text-sm text-slate-600">
+                  Clear, costed next steps if further work is required.
+                </p>
+              </div>
+
+              <div className="text-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div className="w-10 h-10 mx-auto bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold mb-4">
+                  5
+                </div>
+                <h4 className="font-bold text-slate-900 mb-2">
+                  Close‑Out Pack
+                </h4>
+                <p className="text-sm text-slate-600">
+                  Photos, root cause notes, and recommendations sent to you.
                 </p>
               </div>
             </div>

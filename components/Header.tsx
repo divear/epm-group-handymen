@@ -40,6 +40,12 @@ export default function Header() {
             className="mb-2 "
           />
         </a>
+        <div className="links flex items-center gap-8 ml-10 text-2xl font-medium">
+          <a href="/">Home</a>
+          <a href="/about-us">About us</a>
+          <a href="/services">Services</a>
+          <a href="/contact">Contact us</a>
+        </div>
         <div className="text-right">
           <p className="text-sm font-medium text-slate-600">Call us today</p>
           <a
