@@ -18,60 +18,70 @@ export default function Services() {
       description:
         "Urgent fault finding, safe isolation, power restoration, and post‑incident recommendations.",
       icon: <MdFlashOn size={28} />,
+      image: "/service_imgs/service_1_elec.jpg",
     },
     {
       title: "Emergency Plumbing",
       description:
         "Burst pipes, leaks, blockages, isolation, and coordinated dry‑out where needed.",
       icon: <MdPlumbing size={28} />,
+      image: "/service_imgs/service_2_plumb.jpg",
     },
     {
       title: "Security Services",
       description:
         "Rapid response for alarms, access control, CCTV faults, and site re‑securing.",
       icon: <MdSecurity size={28} />,
+      image: "/service_imgs/service_3_sec.jpg",
     },
     {
       title: "Drainage Services",
       description:
         "Emergency unblocking, flood response, and safe reinstatement of critical areas.",
       icon: <MdWaves size={28} />,
+      image: "/service_imgs/service_4_drain.jpg",
     },
     {
       title: "Roofing Services",
       description:
         "Storm damage make‑safe, leak tracing, and temporary weatherproofing.",
       icon: <MdRoofing size={28} />,
+      image: "/service_imgs/service_5_roof.jpg",
     },
     {
       title: "Glazing, Doors & Access",
       description:
         "Re‑glazing, boarding, roller shutters and auto door callouts, safe access restoration.",
       icon: <MdMeetingRoom size={28} />,
+      image: "/service_imgs/service_6_glaz.jpg",
     },
     {
       title: "Fire & Life Safety",
       description:
         "Callouts for fire alarms, emergency lighting, extinguishers, and suppression issues.",
       icon: <MdLocalFireDepartment size={28} />,
+      image: "/service_imgs/service_7_fire.jpg",
     },
     {
       title: "Painting & Decorating",
       description:
         "Fast make‑good and finish matching after leaks, impact, or flood.",
       icon: <MdFormatPaint size={28} />,
+      image: "/service_imgs/service_8_paint.jpg",
     },
     {
       title: "Landscaping Services",
       description:
         "External make‑safe and reinstatement post‑storm or incident.",
       icon: <MdPark size={28} />,
+      image: "/service_imgs/service_9_land.jpg",
     },
     {
       title: "Insurance & Storm Repair",
       description:
         "Documentation, make‑safe, and costed remedials aligned with insurer expectations.",
       icon: <MdAssignment size={28} />,
+      image: "/service_imgs/service_10_ins.jpg",
     },
   ];
 
@@ -98,17 +108,32 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="group relative bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[280px]"
             >
-              <div className="bg-emerald-100 text-emerald-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                {service.icon}
+              {/* Image Backdrop Layer */}
+              <div className="absolute top-0 right-0 w-2/3 h-full pointer-events-none select-none">
+                <img
+                  src={service.image}
+                  alt=""
+                  className="w-full h-full object-cover grayscale-85 object-center opacity-95 mix-blend-multiply transition-all duration-200  group-hover:opacity-100 group-hover:grayscale-0 cursor-pointer"
+                />
+                {/* Horizontal Fade Mask */}
+
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-[var(--via-color)] to-transparent transition-all duration-500 [--via-color:rgba(255,255,255,0.6)] group-hover:[--via-color:rgba(255,255,255,0.2)]" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
-                {service.description}
-              </p>
+
+              {/* Content Layer */}
+              <div className="relative z-10 max-w-[70%]">
+                <div className="bg-emerald-100 text-emerald-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

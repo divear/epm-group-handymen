@@ -37,7 +37,8 @@ export default function Header() {
             alt="Handyman Services logo"
             width={180}
             height={180}
-            className="mb-2 "
+            className="mb-2 h-19 w-auto" // Using Tailwind to resize dynamically
+            style={{ width: "auto" }}
           />
         </a>
         <div className="links flex items-center gap-8 ml-10 text-2xl font-medium">

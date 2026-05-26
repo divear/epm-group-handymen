@@ -1,9 +1,9 @@
- - [ ] create a logo
- - [ ] study what the handymen do and write it there
+ - [x] create a logo
  - [x] make a repo for this and the Ad script
  - [X] the video for the main page - make it look good
- - [ ] add everything listed in https://easypropertymaintenance.ie/reactive-maintenance/
- - [ ] section Home About Us Services v Careers v Contact Us
+ - [ ] study what the handymen do and write it there
+    - [ ] add everything listed in https://easypropertymaintenance.ie/reactive-maintenance/
+ - [x] section Home About Us Services v Careers v Contact Us
  - [ ] responsive
 
 
