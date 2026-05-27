@@ -30,7 +30,7 @@ export default function Header() {
           </a>
         </div>
       </div>
-      <div className="flex items-center justify-between px-6 py-5 mx-auto max-w-7xl">
+      <div className="flex items-center justify-between px-6 py-1 mx-auto max-w-7xl">
         <a href="/">
           <Image
             src="/handymen-light-logo.png"

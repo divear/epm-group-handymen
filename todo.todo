@@ -4,8 +4,8 @@
  - [ ] study what the handymen do and write it there
     - [ ] add everything listed in https://easypropertymaintenance.ie/reactive-maintenance/
  - [x] section Home About Us Services v Careers v Contact Us
- - [ ] responsive
- - [ ] make the header fixed
+ - [x] responsive
+ - [x] make the header sticky
 
 
  - no chat needed, since all of the sites will be linked on easypropertymaintenance.ie
