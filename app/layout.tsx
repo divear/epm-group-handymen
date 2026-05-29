@@ -10,7 +10,7 @@ const jakartaSans = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#007A55", // Change to match your primary brand color
+  themeColor: "#007A55",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -98,7 +98,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${jakartaSans.variable} h-full antialiased`}
     >
-      <body className="font-sans antialiased bg-slate-50 text-slate-900 min-h-screen">
+      <body className="font-sans antialiased bg-slate-50 text-emerald-900 min-h-screen overscroll-none">
         <Header />
         <main>{children}</main>
       </body>

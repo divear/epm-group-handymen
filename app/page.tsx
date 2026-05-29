@@ -257,21 +257,13 @@ export default function Home() {
                 01 255 4422
               </a>
             </div>
-            <div>
-              <p className="text-sm text-slate-500">Support Email</p>
-              <a
-                href="mailto:contact@easypropertymaintenance.ie"
-                className="text-sm font-semibold text-slate-900 block"
-              >
-                contact@easypropertymaintenance.ie
-              </a>
-              <a
-                href="mailto:operations@easypropertymaintenance.ie"
-                className="text-sm font-semibold text-slate-900 block"
-              >
-                operations@easypropertymaintenance.ie
-              </a>
-            </div>
+            <a
+              href="/contact"
+              className="button button-primary bg-emerald-700 text-lg font-semibold text-white hover:bg-emerald-800 transition px-6 py-3 rounded-full"
+            >
+              Contact Us
+            </a>
+            <br />
             <div>
               <p className="text-sm text-slate-500">Address</p>
               <p className="text-sm font-medium text-slate-900 leading-snug">
