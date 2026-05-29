@@ -29,7 +29,6 @@ export async function POST(request: NextRequest) {
           const buffer = Buffer.from(arrayBuffer);
           return {
             filename: f.name,
-            // Kept as base64 string for solid cloud runtime portability
             content: buffer.toString("base64"),
           };
         }),
@@ -50,7 +49,6 @@ export async function POST(request: NextRequest) {
     };
 
     if (attachments.length > 0) {
-      // Fixed the key properties to match Resend's required 'filename' and 'content' keys
       payload.attachments = attachments.map((a) => ({
         filename: a.filename,
         content: a.content,
