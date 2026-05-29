@@ -30,8 +30,8 @@ export async function sendContactEmail(formData: FormData) {
     // Send the email layout via Resend
     const data = await resend.emails.send({
       from: "Dublin Handyman Services <onboarding@resend.dev>", // Replace with your verified domain later
-      //   to: ["contact@easypropertymaintenance.ie"], // Where you want to receive the leads
-      to: ["lukas.odehnal0@gmail.com"], // Where you want to receive the leads
+      to: ["contact@easypropertymaintenance.ie"],
+      //   to: ["lukas.odehnal0@gmail.com"],
       subject: `New Project Inquiry from ${name}`,
       replyTo: email,
       html: `
