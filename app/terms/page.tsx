@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Terms of Use",
+  description:
+    "Legal terms and conditions for using the Dublin Handyman Services website.",
+};
+
 export default function TermsOfUse() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-20 px-6">

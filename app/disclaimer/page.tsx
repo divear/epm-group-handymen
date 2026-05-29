@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Disclaimer",
+  description:
+    "Legal disclaimer and terms of website use for Dublin Handyman Services.",
+};
+
 export default function Disclaimer() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-20 px-6">

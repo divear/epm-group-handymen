@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Refund & Cancellation Policy",
+  description:
+    "Details about our refund and cancellation policies for Dublin Handyman Services.",
+};
 export default function RefundPolicy() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-20 px-6">

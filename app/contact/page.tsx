@@ -1,9 +1,17 @@
 import { MdMail, MdPlace, MdPhone } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Dublin Handyman Services for any inquiries or assistance.",
+};
+
 export default function Contact() {
   return (
-    <div className=" bg-slate-50 text-slate-900 py-10 px-6">
+    <div className="min-h-screen bg-slate-50 text-slate-900 py-20 px-6">
       <div className="mx-auto max-w-5xl bg-white p-10 md:p-14 rounded-3xl shadow-sm border border-slate-200">
         <div className="text-center mb-16">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-700">

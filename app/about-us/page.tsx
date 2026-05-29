@@ -1,5 +1,12 @@
 import { MdHomeRepairService, MdHandshake, MdSecurity } from "react-icons/md";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Dublin Handyman Services, our mission, values, and commitment to providing reliable home maintenance solutions in Dublin.",
+};
 
 export default function AboutUs() {
   return (

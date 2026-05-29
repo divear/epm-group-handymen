@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Our privacy policy explains how we collect, use, and protect your personal information.",
+};
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-20 px-6">

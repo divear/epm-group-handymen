@@ -4,7 +4,7 @@ import { AiFillInstagram } from "react-icons/ai";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-emerald-800 bg-gradient-to-br from-emerald-900 via-emerald-600 to-emerald-200 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 bg-gradient-to-br from-emerald-900 via-emerald-600 to-emerald-200 backdrop-blur-xl">
       <div className="hidden lg:flex items-center justify-between md:px-10 md:py-2 text-white bg-emerald-700">
         <a
           href="mailto:contact@easypropertymaintenance.ie"
@@ -30,7 +30,7 @@ export default function Header() {
           </a>
         </div>
       </div>
-      <div className="flex items-center justify-between px-6 py-1 mx-auto max-w-7xl">
+      <div className="flex items-center justify-between px-6 py-1 m-0 mx-auto max-w-7xl">
         <a href="/">
           <Image
             src="/handymen-light-logo.png"

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import {
   MdFlashOn,
   MdPlumbing,
@@ -10,6 +12,12 @@ import {
   MdPark,
   MdAssignment,
 } from "react-icons/md";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description:
+    "Explore the range of professional handyman services offered by Dublin Handyman Services, including emergency repairs, maintenance, and specialist solutions.",
+};
 
 export default function Services() {
   const services = [
