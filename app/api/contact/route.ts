@@ -1,11 +1,8 @@
 // app/api/contact/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
-import { Buffer } from "buffer";
+import nodemailer from "nodemailer";
 
 export const runtime = "nodejs";
-
-const resend = new Resend(process.env.RESEND_API_KEY as string);
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,6 +12,7 @@ export async function POST(request: NextRequest) {
     const message = (formData.get("message") as string) || "";
     const files = formData.getAll("files") as unknown[] as File[];
 
+    // Parse the multiple uploaded photo objects into native stream buffers
     const attachments = await Promise.all(
       files
         .filter(
@@ -29,16 +27,28 @@ export async function POST(request: NextRequest) {
           const buffer = Buffer.from(arrayBuffer);
           return {
             filename: f.name,
-            content: buffer.toString("base64"),
+            content: buffer,
           };
         }),
     );
 
-    const payload: any = {
-      from: "Dublin Handyman Services <onboarding@resend.dev>",
-      to: ["contact@easypropertymaintenance.ie"],
-      subject: `New Project Inquiry from ${name} | Dublin Handyman Services`,
-      replyTo: email,
+    // Initialize the native transport client using your new secure configuration
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: true, // Secure port 465 integration
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    const mailOptions = {
+      // Shows up neatly in the inbox indicating a new inquiry
+      from: `"Dublin Handyman Form" <${process.env.SMTP_USER}>`,
+      to: "contact@easypropertymaintenance.ie",
+      replyTo: email, // Lets your boss hit 'Reply' to text/email the client back directly
+      subject: `New message from ${name} | Dublin Handyman Services`,
       html: `
         <h2>New Message via Contact Form</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -46,24 +56,19 @@ export async function POST(request: NextRequest) {
         <p><strong>Message:</strong></p>
         <p style="white-space: pre-wrap;">${message}</p>
       `,
+      attachments: attachments.length > 0 ? attachments : undefined,
     };
 
-    if (attachments.length > 0) {
-      payload.attachments = attachments.map((a) => ({
-        filename: a.filename,
-        content: a.content,
-      }));
-    }
+    // Fire the message down the wire
+    await transporter.sendMail(mailOptions);
 
-    const data = await resend.emails.send(payload);
-
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: true });
   } catch (error: any) {
-    console.error("API Route Error:", error);
+    console.error("SMTP Client Processing Error:", error);
     return NextResponse.json(
       {
         success: false,
-        error: error?.message || "Failed to process form.",
+        error: error?.message || "Failed to deliver form data.",
       },
       { status: 500 },
     );
