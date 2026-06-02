@@ -119,20 +119,23 @@ export default function Services() {
               className="group relative bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[280px]"
             >
               {/* Image Backdrop Layer */}
-              <div className="absolute top-0 right-0 w-2/3 h-full pointer-events-none select-none">
+              <div className="absolute top-0 right-0 w-2/3 h-full pointer-events-none select-none overflow-hidden">
                 <img
                   src={service.image}
                   alt=""
-                  className="w-full h-full object-cover grayscale-85 object-center opacity-95 mix-blend-multiply transition-all duration-200  group-hover:opacity-100 group-hover:grayscale-0 cursor-pointer"
+                  className="w-full h-full object-cover grayscale opacity-45 mix-blend-multiply transition-all duration-800 ease-out group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                 />
-                {/* Horizontal Fade Mask */}
 
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-[var(--via-color)] to-transparent transition-all duration-500 [--via-color:rgba(255,255,255,0.6)] group-hover:[--via-color:rgba(255,255,255,0.2)]" />
+                {/* Default Mask (Visible state) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent transition-opacity duration-500 ease-out group-hover:opacity-0" />
+
+                {/* Hover Mask (Fades in to let more color pop through) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
               </div>
 
               {/* Content Layer */}
               <div className="relative z-10 max-w-[70%]">
-                <div className="bg-emerald-100 text-emerald-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                <div className="bg-emerald-100 text-emerald-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm transition-transform duration-300 group-hover:-translate-y-1">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
