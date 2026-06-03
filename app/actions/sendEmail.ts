@@ -1,10 +1,7 @@
 // app/actions/sendEmail.ts
 "use server";
 
-import { Resend } from "resend";
-
-// Initialize Resend with your API Key stored in environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from "nodemailer";
 
 export async function sendContactEmail(formData: FormData) {
   const name = formData.get("name") as string;
@@ -12,8 +9,20 @@ export async function sendContactEmail(formData: FormData) {
   const message = formData.get("message") as string;
   const files = formData.getAll("files") as File[];
 
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = Number(process.env.SMTP_PORT || 0);
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+
+  if (!smtpHost || !smtpPort || !smtpUser || !smtpPass) {
+    return {
+      success: false,
+      error:
+        "SMTP configuration is missing. Set SMTP_HOST, SMTP_PORT, SMTP_USER, and SMTP_PASS.",
+    };
+  }
+
   try {
-    // Process attachments cleanly if any files were uploaded
     const attachments = await Promise.all(
       files
         .filter((file) => file.size > 0 && file.name !== "undefined")
@@ -27,26 +36,42 @@ export async function sendContactEmail(formData: FormData) {
         }),
     );
 
-    // Send the email layout via Resend
-    const data = await resend.emails.send({
-      from: "Dublin Handyman Services <onboarding@resend.dev>", // Replace with your verified domain later
-      // to: ["contact@easypropertymaintenance.ie"],
-      to: ["lukas.odehnal0@gmail.com"],
-      subject: `New Project Inquiry from ${name}`,
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    });
+
+    const mailOptions = {
+      from: `"Dublin Handyman Services" <${smtpUser}>`,
+      to: [
+        "contact@easypropertymaintenance.ie",
+        "lukyn.odehnal333@gmail.com",
+        "lukas.odehnal0@gmail.com",
+      ],
       replyTo: email,
+      subject: `New Project Inquiry from ${name}`,
       html: `
-        <h2>New Message via Contact Form from the Dublin Handyman Services</h2>
+        <h2>New Message via Contact Form</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
         <p style="white-space: pre-wrap;">${message}</p>
       `,
       attachments: attachments.length > 0 ? attachments : undefined,
-    });
+    };
 
-    return { success: true, data };
+    await transporter.sendMail(mailOptions);
+    return { success: true };
   } catch (error: any) {
-    console.error("Email processing error:", error);
-    return { success: false, error: error.message || "Failed to send email." };
+    console.error("Nodemailer processing error:", error);
+    return {
+      success: false,
+      error: error.message || "Failed to send email with nodemailer.",
+    };
   }
 }
